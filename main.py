@@ -1,9 +1,10 @@
-test
-
-second
-
-third
-
-fourth
-
-fifth
+import pexpect
+child=pexpect.spawn("telnet 13.115.247.170 32773")
+child.sendline("\r\n")
+child.expect(">")
+child.sendline("enable")
+child.expect("#")
+child.sendline("hostname Router1")
+child.expect("#")
+child.sendline("end")
+child.expect("#")
